@@ -27,7 +27,7 @@ const ShopDefaultPage = () => {
             <div className="ps-page--shop">
                 <BreadCrumb breacrumb={breadCrumb} layout="fullwidth" />
                 <div className="ps-container">
-                    <ShopBanner />
+                    <ShopBanner name={{}} />
                     <ShopBrands />
                     <ShopCategories />
                     <div className="ps-layout--shop">

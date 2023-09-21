@@ -110,44 +110,46 @@ const ProductGroupByCarousel = ({
 
     // Views
     let productItemsView;
-    console.log(data.productos);
-    if (!loading) {
-        if (data && data.productos?.length > 0) {
-            const slideItems = data.productos?.map((item) => (
-                <Product products={item} datos={data} key={item.ProductId} />
-            ));
-            if (layout !== 'standard') {
-                productItemsView = (
-                    <Slider
-                        ref={(slider) => (sliderRef.current = slider)}
-                        {...carouselFullwidth}
-                        arrows={false}
-                        className="ps-carousel outside">
-                        {slideItems}
-                    </Slider>
-                );
-            } else {
-                productItemsView = (
-                    <Slider
-                        ref={(slider) => (sliderRef.current = slider)}
-                        {...carouselStandard}
-                        arrows={false}
-                        className="ps-carousel outside">
-                        {slideItems}
-                    </Slider>
-                );
-            }
+
+    /* if (!loading) { */
+    if (data.product?.length > 0) {
+        console.log(data.product);
+        const slideItems = data.product?.map((item) => (
+            <Product products={item} key={item.ProductId} />
+        ));
+        /*  const slideItems = ''; */
+        if (layout !== 'standard') {
+            productItemsView = (
+                <Slider
+                    ref={(slider) => (sliderRef.current = slider)}
+                    {...carouselFullwidth}
+                    arrows={false}
+                    className="ps-carousel outside">
+                    {slideItems}
+                </Slider>
+            );
         } else {
-            productItemsView = <p>No product found.</p>;
+            productItemsView = (
+                <Slider
+                    ref={(slider) => (sliderRef.current = slider)}
+                    {...carouselStandard}
+                    arrows={false}
+                    className="ps-carousel outside">
+                    {slideItems}
+                </Slider>
+            );
         }
     } else {
+        productItemsView = <p>No product found.</p>;
+    }
+    /* } else {
         const skeletons = generateTempArray(6).map((item) => (
             <div className="col-xl-2 col-lg-3 col-sm-3 col-6" key={item}>
                 <SkeletonProduct />
             </div>
         ));
         productItemsView = <div className="row">{skeletons}</div>;
-    }
+    } */
 
     return (
         <div className="ps-block--shop-features">

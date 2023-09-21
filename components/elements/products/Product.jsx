@@ -6,21 +6,22 @@ import Rating from '~/components/elements/Rating';
 
 const Product = ({ products, datos }) => {
     const { thumbnailImage, price, badge, title } = useProduct();
-    console.log(datos);
-    /*  let base = datos.base_url; */
-
+    let img = products.imagen_principal;
+    console.log(img);
     return (
         <div className="ps-product">
             <div className="ps-product__thumbnail">
                 <Link href="/product/[pid]" as={`/product/${products}`}>
-                    <a>{/* <img src={base} /> */}</a>
+                    <a>
+                        <img src={img} />
+                    </a>
                 </Link>
                 {/* {badge(products)} */}
-                <ModuleProductActions product={products} />
+                <ModuleProductActions product="" />
             </div>
             <div className="ps-product__container">
                 <Link href="/shop">
-                    <a className="ps-product__vendor">Young Shop</a>
+                    <a className="ps-product__vendor"></a>
                 </Link>
                 <div className="ps-product__content">
                     {/* {title(products)} */}

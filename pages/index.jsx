@@ -10,15 +10,18 @@ import HomeDefaultTopCategories from '~/components/partials/homepage/home-defaul
 import HomeDefaultProductListing from '~/components/partials/homepage/home-default/HomeDefaultProductListing';
 import HomeDefaultBanner from '~/components/partials/homepage/home-default/HomeDefaultBanner';
 import PageContainer from '~/components/layouts/PageContainer';
+import { useFetch } from './api/api';
 
 const HomepageDefaultPage = () => {
+    useFetch('https://oportuna.red/Wms_Oportuna/api/get_productos_tiendas');
+
     return (
         <PageContainer title="Multipurpose Marketplace React Ecommerce Template">
             <main id="homepage-1">
                 <HomeDefaultBanner />
                 <HomeDefaultDealOfDay collectionSlug="deal-of-the-day" />
-                {/* <HomeAdsColumns /> */}
-                {/* <HomeDefaultTopCategories />
+                <HomeAdsColumns />
+                <HomeDefaultTopCategories />
                 <HomeDefaultProductListing
                     collectionSlug="consumer-electronics"
                     title="Consumer Electronics"
@@ -31,10 +34,10 @@ const HomepageDefaultPage = () => {
                     collectionSlug="garden-and-kitchen"
                     title="Garden & Kitchen"
                 />
-                <HomeAds /> */}
+                <HomeAds />
                 <DownLoadApp />
-                {/*  <NewArrivals collectionSlug="new-arrivals-products" /> */}
-                {/* <Newletters /> */}
+                <NewArrivals collectionSlug="new-arrivals-products" />
+                <Newletters />
             </main>
         </PageContainer>
     );

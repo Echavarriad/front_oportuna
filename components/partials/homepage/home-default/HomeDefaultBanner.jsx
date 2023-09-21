@@ -56,19 +56,14 @@ const HomeDefaultBanner = () => {
     // Views
     let mainCarouselView;
     if (bannerItems) {
-        let datos = data.productos;
-        let base = datos.base_url;
-        let idgrup = datos.idgrupo;
-        console.log(data);
+        let datos = data.product;
         const carouseItems = datos.map((item) => (
             <div className="slide-item" key={item.ProductId}>
                 <Link href="/shop">
                     <a
                         className="ps-banner-item--default bg--cover"
                         style={{
-                            backgroundImage: `url(${base}${item.idgrup}${'/'}${
-                                item.Image
-                            })`,
+                            backgroundImage: `url()`,
                         }}
                     />
                 </Link>

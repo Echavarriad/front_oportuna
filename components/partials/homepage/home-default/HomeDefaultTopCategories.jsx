@@ -8,8 +8,6 @@ const HomeDefaultTopCategories = () => {
     );
 
     let datos = data.productos;
-    let base = datos.base_url;
-    let idgrup = datos.idgrupo + '/';
 
     const carouseItems = data.productos?.map((item) => (
         <div
